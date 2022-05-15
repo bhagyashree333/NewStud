@@ -16,8 +16,8 @@ public  class Course
 
     public void getCourseDetails()
     {
-        Console.WriteLine("ENTER COURSE ID");
-        CourseId = int.Parse(Console.ReadLine());
+        //Console.WriteLine("ENTER COURSE ID");
+        //CourseId = int.Parse(Console.ReadLine());
 
         Console.WriteLine("|==========================================================================|");
         Console.WriteLine("ENTER COURSE CODE");

@@ -27,10 +27,7 @@ namespace StudentManagementSystem
                 command.Parameters.Add(new SqlParameter("@CourseTitle", c.CourseTitle));
 
                 command.Parameters.Add(new SqlParameter("@CourseDescription", c.CourseDescription));
-                command.Parameters.Add(new SqlParameter("@Course_id", c.CourseId));
-
-                int updatecount = command.ExecuteNonQuery();
-                Console.WriteLine(updatecount + "records updated");
+                 //command.Parameters.Add(new SqlParameter("@Course_id", c.CourseId));
 
                 using (SqlDataReader reader = command.ExecuteReader())
                 {
@@ -46,9 +43,11 @@ namespace StudentManagementSystem
 
         public void UpdateCourse(Course c)
         {
+            Console.WriteLine("ENTER COURSE ID");
+            c.CourseId = int.Parse(Console.ReadLine());
             c.getCourseDetails();
 
-            string connectionStrig = @"Data Source=WAIDESK01\MSSQLSERVER01;Initial Catalog=Bk1;Integrated Security=True";
+            string connectionStrig = @"Data Source=DESKTOP-P2FMG09;Initial Catalog=Bk1;Integrated Security=True";
             using (SqlConnection connection = new SqlConnection(connectionStrig))
            
             {

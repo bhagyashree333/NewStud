@@ -126,7 +126,7 @@ public class Menu
                     }
                 case 13:
                     {
-                      //  customer.CreateList();
+                        m1.DisplayMarksByRollNo(marks);
                         break;
                     }
                 case 14:

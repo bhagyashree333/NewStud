@@ -10,13 +10,13 @@ namespace StudentManagementSystem;
 
 internal class StudentService
 {
-    ConnectionFactory connection = new ConnectionFactory();
-    
-   
+    ConnectionFactory MyDbcon = new ConnectionFactory();
+
     public void AddStudent(Student s)
     {
+        
         s.getStudentDetails();
-        using (SqlCommand command = new SqlCommand("AddStudent", connection.MydbConnection()))
+        using (SqlCommand command = new SqlCommand("AddStudent", MyDbcon.MydbConnection()))
         {
 
             command.CommandType = System.Data.CommandType.StoredProcedure;
@@ -44,7 +44,7 @@ internal class StudentService
     public void UpdateStudent(Student s)
     {
         s.getStudentDetails();
-        using (SqlCommand command = new SqlCommand("UpdateStudent", connection.MydbConnection()))
+        using (SqlCommand command = new SqlCommand("UpdateStudent", MyDbcon.MydbConnection()))
         {
 
             command.CommandType = System.Data.CommandType.StoredProcedure;
@@ -72,7 +72,7 @@ internal class StudentService
         Console.WriteLine("Enter Roll Number");
        s.Rollno = int.Parse(Console.ReadLine());
 
-        using (SqlCommand command = new SqlCommand("[student].DeleteStudent", connection.MydbConnection()))
+        using (SqlCommand command = new SqlCommand("[student].DeleteStudent", MyDbcon.MydbConnection()))
         {
 
             command.CommandType = System.Data.CommandType.StoredProcedure;
@@ -97,7 +97,7 @@ internal class StudentService
     //ListAllDetails
     public void DisplayStudentReport()
     {
-        using (SqlCommand command = new SqlCommand("[ListAllDetails]", connection.MydbConnection()))
+        using (SqlCommand command = new SqlCommand("[ListAllDetails]", MyDbcon.MydbConnection()))
         {
 
             command.CommandType = System.Data.CommandType.StoredProcedure;

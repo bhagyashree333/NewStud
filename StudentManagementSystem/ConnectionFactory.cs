@@ -17,8 +17,8 @@ public class ConnectionFactory
     public SqlConnection MydbConnection()
     {
 
-        string connectionStrig = @"Data Source=WAIDESK01\MSSQLSERVER01;Initial Catalog=Bk1;Integrated Security=True";
-        connection = new SqlConnection(connectionStrig);
+        string connectionStrig = @"Data Source=DESKTOP-P2FMG09;Initial Catalog=Bk1;Integrated Security=True";
+       connection = new SqlConnection(connectionStrig);
 
           connection.Open();
             return connection;
